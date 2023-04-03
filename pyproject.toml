@@ -1,0 +1,27 @@
+[project]
+
+name= "flir-thermal-camera-robotraconteur-driver"
+version = "0.0.1"
+description = "Flir Thermal Camera Robot Raconteur Driver using Spinnaker SDK"
+requires-python = ">=3.6"
+license = {file = "LICENSE.txt"}
+authors = [
+    {name = "John Wason", email = "wason@wasontech.com"}
+]
+
+dependencies = [
+    'RobotRaconteur',
+    'RobotRaconteurCompanion',
+    'numpy',
+    'opencv-contrib-python'
+]
+
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = [
+    'setuptools',
+    'toml',
+]
+
+[project.scripts]
+flir-thermal-camera-robotraconteur-driver = "flir_thermal_camera_robotraconteur_driver.spectrometer_driver:main"
