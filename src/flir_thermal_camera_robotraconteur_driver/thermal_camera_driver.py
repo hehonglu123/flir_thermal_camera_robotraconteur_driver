@@ -295,7 +295,10 @@ _normal_params = {
     "estimated_transmission": ("EstimatedTransmission", "double"),
     "ext_optics_temperature": ("ExtOpticsTemperature", "double"),
     "ext_optics_transmission": ("ExtOpticsTransmission", "double"),
-    "focus_pos": ("FocusPos", "int32")
+    "focus_pos": ("FocusPos", "int32"),
+    "scale_limit_low": ("ScaleLimitLow", "double"),
+    "scale_limit_upper": ("ScaleLimitUpper", "double"),
+    "current_case": ("CurrentCase", "int32")
 }
 
 class PySpinSystem:

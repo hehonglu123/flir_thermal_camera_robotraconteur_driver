@@ -32,3 +32,6 @@ c1.setf_param("focus_pos", RR.VarValue(1500,"int32"))
 c1.setf_param("fps", RR.VarValue(15,"double"))
 c1.setf_param("ir_format", RR.VarValue("temperature_linear_100mK","string"))
 # c1.setf_param("ir_format", RR.VarValue("radiometric","string"))
+
+# Set the calibration to third option
+#c1.setf_param("current_case", RR.VarValue(2,"int32"))
