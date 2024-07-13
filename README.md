@@ -3,15 +3,15 @@
 This repository contains a Robot Raconteur driver for FLIR thermal cameras using the Python Spinaker SDK. This
 driver uses the standard Robot Raconteur `com.robotraconteur.imaging.Camera` interface. The driver should be compatible
 with most FLIR cameras supported by the Spinaker SDK, but has only been tested on the FLIR ThermoVision A320 camera.
-This camera is a 320x240 pixel camera with a 60 Hz frame rate. This is an older camera, but newer cameras should work
+This camera is a 320x240 pixel camera with a 30 Hz frame rate. This is an older camera, but newer cameras should work
 but may need some tweaking.
 
 ## Installation
 
-Python needs to be installed. For the older version of the Spinaker SDK described below, Python version 3.7 is required.
-It is recommended that Python 3.7 be installed to `C:\Python37` on Windows. The Python installation must be 64 bit.
+Python needs to be installed. For the older version of the Spinaker SDK described below, Python version 3.8 is required.
+It is recommended that Python 3.8 be installed to `C:\Python38` on Windows. The Python installation must be 64 bit.
 
-The FLIR Spinaker Full SDK  and the Python Spinaker SDK must be installed.The ThermoVision A320 camera requires an 
+The FLIR Spinaker Full SDK  and the Python Spinaker SDK must be installed. The ThermoVision A320 camera requires an 
 older version of the Spinaker SDK. Version `2.7.0.128` is known to work. The SDK can be downloaded from the FLIR 
 website after registration. Both the SDK and the Python wrapper must be installed. Install the Spinaker SDK first 
 to the default location. Extract the Python SDK zip file to a directory of your choice.
@@ -19,13 +19,13 @@ to the default location. Extract the Python SDK zip file to a directory of your 
 Install the Python Spinaker SDK from the wheel file extracted from the zip:
 
 ```
-c:\python37\python -m pip install --user <spinaker python directory>/spinnaker_python-2.7.0.128-cp37-cp37m-win_amd64.whl
+c:\python38\python -m pip install --user <spinaker python directory>/spinnaker_python-2.7.0.128-cp38-cp38-win_amd64.whl
 ```
 
 Now install the driver from GitHub using pip:
 
 ```
-c:\python37\python -m pip install --user git+https://github.com/johnwason/flir_thermal_camera_robotraconteur_driver.git
+c:\python38\python -m pip install --user git+https://github.com/johnwason/flir_thermal_camera_robotraconteur_driver.git
 ```
 
 The driver requires a configuration file to be specified at the command line. Download the A320 config file
@@ -43,7 +43,7 @@ documentation for the camera standard type for more information.
 The driver can be run from the command line using the following command:
 
 ```
-c:\python37\python -m flir_thermal_camera_robotraconteur_driver --config-file=flir_thermovision_a320_default_config.yml
+c:\python38\python -m flir_thermal_camera_robotraconteur_driver --config-file=flir_thermovision_a320_default_config.yml
 ```
 
 By default the driver can be connected using the following url: `rr+tcp://127.0.0.1:60827/?service=camera`.
