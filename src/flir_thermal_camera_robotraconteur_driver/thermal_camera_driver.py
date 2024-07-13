@@ -3,7 +3,7 @@ import RobotRaconteur as RR
 RRN = RR.RobotRaconteurNode.s
 import RobotRaconteurCompanion as RRC
 import argparse
-import sys
+import sys, copy
 import platform
 import threading
 import numpy as np
@@ -228,10 +228,19 @@ class ThermalCameraImpl(object):
             mat = image2.GetNDArray()
             self._current_image = mat
 
-            if self._streaming and self._wires_init:
+            try:
+                self._prev_image
+            except:
+                self._prev_image = np.zeros_like(mat)
+
+            if self._streaming and self._wires_init and not (self._current_image==self._prev_image).all():
                 self.frame_stream.AsyncSendPacket(self._cv_mat_to_image(mat),lambda: None)
                 self.frame_stream_compressed.AsyncSendPacket(self._cv_mat_to_compressed_image(mat),lambda: None)
                 self.preview_stream.AsyncSendPacket(self._cv_mat_to_compressed_image(mat,70),lambda: None)
+            
+            #IR static frame thrown
+            self._prev_image = copy.deepcopy(mat)
+
         except Exception as e:
             traceback.print_exc()
 

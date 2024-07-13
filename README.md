@@ -25,14 +25,14 @@ c:\python38\python -m pip install --user <spinaker python directory>/spinnaker_p
 Now install the driver from GitHub using pip:
 
 ```
-c:\python38\python -m pip install --user git+https://github.com/johnwason/flir_thermal_camera_robotraconteur_driver.git
+c:\python38\python -m pip install --user git+https://github.com/hehonglu123/flir_thermal_camera_robotraconteur_driver.git
 ```
 
 The driver requires a configuration file to be specified at the command line. Download the A320 config file
 using curl:
 
 ```
-curl -L -o flir_thermovision_a320_default_config.yml https://raw.githubusercontent.com/johnwason/flir_thermal_camera_robotraconteur_driver/main/config/flir_thermovision_a320_default_config.yml
+curl -L -o flir_thermovision_a320_default_config.yml https://raw.githubusercontent.com/hehonglu123/flir_thermal_camera_robotraconteur_driver/main/config/flir_thermovision_a320_default_config.yml
 ```
 
 Other cameras can be defined by modifying the contents of the config file. The config file is a YAML file. See the
