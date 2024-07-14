@@ -32,7 +32,7 @@ The driver requires a configuration file to be specified at the command line. Do
 using curl:
 
 ```
-curl -L -o flir_thermovision_a320_default_config.yml https://raw.githubusercontent.com/hehonglu123/flir_thermal_camera_robotraconteur_driver/main/config/flir_thermovision_a320_default_config.yml
+curl -L -o flir_thermovision_a320_default_config.yml https://raw.githubusercontent.com/robotraconteur-contrib/flir_thermal_camera_robotraconteur_driver/main/config/flir_thermovision_a320_default_config.yml
 ```
 
 Other cameras can be defined by modifying the contents of the config file. The config file is a YAML file. See the
